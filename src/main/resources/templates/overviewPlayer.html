@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.w3.org/1999/xhtml"
+>
+<head>
+    <meta charset="UTF-8" />
+    <title>Players</title>
+    <link rel="icon" type="image/png" th:href="@{/soccer.png}" />
+
+    <link rel=stylesheet th:href="@{football/style.css}">
+    <link rel=stylesheet type=text/css th:href="@{football/layerslider.css}">
+
+</head>
+<body>
+<header class=header-main>
+    <div class=header-upper>
+        <div class=container>
+            <div class=row>
+                <ul>
+                    <li><a href="#">Proiect Pweb</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header-lower clearfix">
+        <div class=container>
+            <div class=menubar>
+                <nav class=navbar>
+                    <div class=nav-wrapper>
+                        <div class=navbar-header>
+                            <button type=button class=navbar-toggle><span class=sr-only>Toggle navigation</span>
+                                <span class=icon-bar></span></button>
+                        </div>
+                        <div class=nav-menu>
+                            <ul class="nav navbar-nav menu-bar">
+                                <li><a href="home">Home <span></span> <span></span>
+                                    <span></span> <span></span></a></li>
+                                <li><a href="overviewPlayer" class=active>Overview <span></span> <span></span> <span></span>
+                                    <span></span></a></li>
+                                <li><a href="players">Details<span></span> <span></span> <span></span>
+                                    <span></span></a></li>
+                                <li><a href="formPlayer">Add player<span></span> <span></span> <span></span>
+                                    <span></span></a></li>
+                                <li><a href="contact">Contact <span></span> <span></span> <span></span>
+                                    <span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+</div>
+
+<div class=innerbannerwrap>
+    <div class=content></div>
+    <div class=innerbanner><img
+            th:src="@{football/innerpageBg.jpg}" class=ls-bg alt="Slide background"/><h2 class=bannerHeadline>Over<span>view</span></h2></div>
+</div>
+
+<br>
+    <table
+            id="playerTable"
+            class="table table-striped table-hover table-bordered"
+            style="width: 80%; margin-left:10%;"
+    >
+        <thead>
+        <tr>
+            <td><h1>FirstName</h1></td>
+            <td><h1>LastName</h1></td>
+            <td><h1>Club</h1></td>
+            <td><h1>Age</h1></td>
+            <td><h1>Role</h1></td>
+            <td><h1>Edit</h1></td>
+            <td><h1>Delete</h1></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="s: ${players}">
+
+                <td th:id="playerEntity">
+                    <h3 th:text="${s.firstName}"></h3>
+                </td>
+                <td th:id="playerEntity">
+                    <h3 th:text="${s.lastName}"></h3>
+                </td>
+                <td th:id="playerEntity">
+                    <h3 th:text="${s.club}"></h3>
+                </td>
+                <td th:id="playerEntity">
+                    <h3 th:text="${s.age}"></h3>
+                </td>
+                <td th:id="playerEntity">
+                    <h3 th:text="${s.role}"></h3>
+                </td>
+                <td>
+
+                        <button class="btn-small btn-white" type="submit" >
+                            <a th:href="@{/editPlayer/{id}(id=${s.id})}">Edit</a>
+                        </button>
+                </td>
+            </form>
+            <td>
+                <button class="btn-small btn-red" type="submit">
+                    <a th:href="@{/deletePlayer/{id}(id=${s.id})}">Delete</a>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+<div class="footer">
+    <div class="footer__documentation">
+        <h3 class="text__gradient--bg">Documentation</h3>
+        <a href="https://www.w3schools.com/html/">HTML</a>
+        <a href="https://www.w3schools.com/css/">CSS</a>
+        <a href="https://www.javascript.com">Javascript</a>
+        <a href="https://spring.io/projects/spring-boot">Spring</a>
+        <a href="https://start.spring.io/">Spring Initializr</a>
+    </div>
+    <div class="footer__contact">
+        <h3 class="text__gradient--bg">Daniel</h3>
+        <a href="https://www.facebook.com/danielflorin.tintea/">Facebook</a>
+        <a href="https://www.instagram.com/tintea.daniel11/">Instagram</a>
+        <a href="https://wa.me/40733122893">Whatsapp</a>
+    </div>
+    <div class="footer__copyrights">
+        <p>Project <a href="">github</a></p>
+        <p>site design / logo © <a href="https://www.templateshub.net/template/Soccer-Club-Sports-Club-Html-Template">theme</a></p>
+        <p>Proiect @ PWeb</p>
+    </div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script th:src="@{football/vendor.js}"></script>
+<script th:src="@{football/main.js}"></script>
+</html>

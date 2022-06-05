@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Player</title>
+  <link rel="icon" type="image/png" th:href="@{/soccer.png}">
+
+  <link rel=stylesheet th:href="@{football/style.css}">
+  <link rel=stylesheet type=text/css th:href="@{football/layerslider.css}">
+  <link rel=stylesheet th:href="@{football/vendor.css}">
+
+</head>
+<body>
+
+<header class=header-main>
+  <div class=header-upper>
+    <div class=container>
+      <div class=row>
+        <ul>
+          <li><a href="#">Proiect Pweb</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="header-lower clearfix">
+    <div class=container>
+      <div class=menubar>
+        <nav class=navbar>
+          <div class=nav-wrapper>
+            <div class=navbar-header>
+              <button type=button class=navbar-toggle><span class=sr-only>Toggle navigation</span>
+                <span class=icon-bar></span></button>
+            </div>
+            <div class=nav-menu>
+              <ul class="nav navbar-nav menu-bar">
+                <li><a href="home">Home <span></span> <span></span>
+                  <span></span> <span></span></a></li>
+                <li><a href="overviewPlayer">Overview <span></span> <span></span> <span></span>
+                  <span></span></a></li>
+                <li><a href="players" class=active>Details<span></span> <span></span> <span></span>
+                  <span></span></a></li>
+                <li><a href="formPlayer">Add player<span></span> <span></span> <span></span>
+                  <span></span></a></li>
+                <li><a href="contact">Contact <span></span> <span></span> <span></span>
+                  <span></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+</div>
+
+<div class=innerbannerwrap>
+  <div class=content></div>
+  <div class=innerbanner><img
+          th:src="@{football/innerpageBg.jpg}" class=ls-bg alt="Slide background"/><h2 class=bannerHeadline>Players <span>Details</span></h2></div>
+</div>
+
+<section class="playerDetails02" style="background-image: url('pdtls.jpg');">
+  <div class=container>
+    <div class="wrapper-container clearfix"><a class="prv prev"></a> <a class="nxt next"></a>
+      <ul class=player02>
+        <li th:each="s: ${players}">
+          <div class=player02fig>
+            <img th:src="${s.image}" class="imgplayer bgimg">
+          </div>
+          <div class=player02info>
+            <div class=clearfix>
+              <div class=player02info01>
+                <h5>First Name</h5><h6 th:text="${s.firstName}"></h6><br>
+                <h5>Last Name</h5><h6 th:text="${s.lastName}"></h6><br>
+                <h5>Club</h5><h6 th:text="${s.club}"></h6><br>
+                <h5>Ntional</h5><h6 th:text="${s.national}"></h6><br>
+                <h5>Number</h5><h6 th:text="${s.number}"></h6><br>
+                <h5>Position</h5><h6 th:text="${s.role}"></h6><br>
+                <h5>Age</h5><h6 th:text="${s.age}"></h6><br>
+                <h5>Value</h5><h6 th:text="${s.value}"></h6><h5>m euro</h5><br>
+              </div>
+            </div>
+            <h6 class=oswald16>imformation</h6>
+            <p th:text="${s.info}"></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="footer__documentation">
+    <h3 class="text__gradient--bg">Documentation</h3>
+    <a href="https://www.w3schools.com/html/">HTML</a>
+    <a href="https://www.w3schools.com/css/">CSS</a>
+    <a href="https://www.javascript.com">Javascript</a>
+    <a href="https://spring.io/projects/spring-boot">Spring</a>
+    <a href="https://start.spring.io/">Spring Initializr</a>
+  </div>
+  <div class="footer__contact">
+    <h3 class="text__gradient--bg">Daniel</h3>
+    <a href="https://www.facebook.com/danielflorin.tintea/">Facebook</a>
+    <a href="https://www.instagram.com/tintea.daniel11/">Instagram</a>
+    <a href="https://wa.me/40733122893">Whatsapp</a>
+  </div>
+  <div class="footer__copyrights">
+    <p>Project <a href="">github</a></p>
+    <p>site design / logo © <a href="https://www.templateshub.net/template/Soccer-Club-Sports-Club-Html-Template">theme</a></p>
+    <p>Proiect @ PWeb</p>
+  </div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script th:src="@{football/vendor.js}"></script>
+<script th:src="@{football/main.js}"></script>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Player</title>
+  <link rel="icon" type="image/png" th:href="@{/soccer.png}">
+
+  <link rel=stylesheet th:href="@{football/style.css}">
+  <link rel=stylesheet type=text/css th:href="@{football/layerslider.css}">
+  <link rel=stylesheet th:href="@{football/vendor.css}">
+
+</head>
+<body>
+
+<header class=header-main>
+  <div class=header-upper>
+    <div class=container>
+      <div class=row>
+        <ul>
+          <li><a href="#">Proiect Pweb</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="header-lower clearfix">
+    <div class=container>
+      <div class=menubar>
+        <nav class=navbar>
+          <div class=nav-wrapper>
+            <div class=navbar-header>
+              <button type=button class=navbar-toggle><span class=sr-only>Toggle navigation</span>
+                <span class=icon-bar></span></button>
+            </div>
+            <div class=nav-menu>
+              <ul class="nav navbar-nav menu-bar">
+                <li><a href="home">Home <span></span> <span></span>
+                  <span></span> <span></span></a></li>
+                <li><a href="overviewPlayer">Overview <span></span> <span></span> <span></span>
+                  <span></span></a></li>
+                <li><a href="players">Details<span></span> <span></span> <span></span>
+                  <span></span></a></li>
+                <li><a href="formPlayer" class=active>Add player<span></span> <span></span> <span></span>
+                  <span></span></a></li>
+                <li><a href="contact">Contact <span></span> <span></span> <span></span>
+                  <span></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+</div>
+
+<div class=innerbannerwrap>
+  <div class=content></div>
+  <div class=innerbanner><img
+          th:src="@{football/innerpageBg.jpg}" class=ls-bg alt="Slide background"/><h2 class=bannerHeadline>Add a new <span>player</span></h2></div>
+</div>
+
+
+<div class=container>
+  <div class=row>
+<form  method="post" action="/addPlayer" modelAttribute="player" >
+
+<div class="formcontact clearfix" th:object="${player}" style="background-image: url('errorBg.jpg');">
+      <div class="form-group">
+        <input type="text" class="form-control" id="firstName" placeholder="FirstName" name="firstName" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="lastName" placeholder="LastName" name="lastName" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="club" placeholder="Club" name="club" required>
+      </div>
+      <div class="form-group">
+      <input type="text" class="form-control" id="national" placeholder="National" name="national" required>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="age" placeholder="Age" name="age" required>
+      </div>
+     <div class="form-group">
+      <input type="number" class="form-control" id="value" placeholder="Value (in millions euro)" name="value" required>
+     </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="role" placeholder="Role" name="role" required>
+      </div>
+      <div class="form-group">
+       <input type="number" class="form-control" id="number" placeholder="Number" name="number" required>
+      </div>
+      <div class="form-group1">
+        <input type="text" class="form-control" id="image" placeholder="Link photo" name="image" required>
+      </div>
+      <div class=form-group1><textarea class="form-control textas" id="info" name="info" placeholder="Player information" required></textarea></div>
+
+
+    <div class="formPlayer__submit" style="margin-top: 2rem">
+      <input
+              class="btn btn-red"
+              type="submit"
+              value="Add"
+      />
+      <button class="btn btn-secondary btn--reset">Reset</button>
+    </div>
+
+</div>
+</form>
+</div>
+</div>
+<div class="footer">
+  <div class="footer__documentation">
+    <h3 class="text__gradient--bg">Documentation</h3>
+    <a href="https://www.w3schools.com/html/">HTML</a>
+    <a href="https://www.w3schools.com/css/">CSS</a>
+    <a href="https://www.javascript.com">Javascript</a>
+    <a href="https://spring.io/projects/spring-boot">Spring</a>
+    <a href="https://start.spring.io/">Spring Initializr</a>
+  </div>
+  <div class="footer__contact">
+    <h3 class="text__gradient--bg">Daniel</h3>
+    <a href="https://www.facebook.com/danielflorin.tintea/">Facebook</a>
+    <a href="https://www.instagram.com/tintea.daniel11/">Instagram</a>
+    <a href="https://wa.me/40733122893">Whatsapp</a>
+  </div>
+  <div class="footer__copyrights">
+    <p>Project <a href="">github</a></p>
+    <p>site design / logo © <a href="https://www.templateshub.net/template/Soccer-Club-Sports-Club-Html-Template">theme</a></p>
+    <p>Proiect @ PWeb</p>
+  </div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script th:src="@{football/vendor.js}"></script>
+<script th:src="@{football/main.js}"></script>
+<script>
+const inputFirstName = document.getElementById("firstName");
+const inputLastName = document.getElementById("lastName");
+const inputClub = document.getElementById("club");
+const inputAge = document.getElementById("age");
+const inputRole = document.getElementById("role");
+const inputValue = document.getElementById("value");
+const inputImage = document.getElementById("image");
+const inputInfo = document.getElementById("info");
+const inputNumber = document.getElementById("number");
+const inputNational = document.getElementById("national");
+const btnReset = document.querySelector(".btn--reset");
+
+btnReset.addEventListener("click", (e) => {
+    e.preventDefault();
+    inputFirstName.value = "";
+    inputLastName.value = "";
+    inputClub.value = "";
+    inputAge.value = "";
+    inputRole.value = "";
+    inputImage.value = "";
+    inputInfo.value = "";
+    inputValue.value = "";
+    inputNumber.value = "";
+    inputNational.value = "";
+})
+</script>
+
+</html>

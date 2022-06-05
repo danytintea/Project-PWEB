@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+
+    <link rel="icon" type="image/png" th:href="@{/soccer.png}">
+
+    <link rel=stylesheet th:href="@{football/style.css}">
+    <link rel=stylesheet type=text/css th:href="@{football/layerslider.css}">
+    <link rel=stylesheet th:href="@{football/vendor.css}">
+
+
+
+    <!-- Icon Font Stylesheet -->
+    <link type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css}"
+          rel="stylesheet">
+
+
+</head>
+<body>
+<header class=header-main>
+<div class=header-upper>
+    <div class=container>
+        <div class=row>
+            <ul>
+                <li><a href="#">Proiect Pweb</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="header-lower clearfix">
+    <div class=container>
+        <div class=menubar>
+            <nav class=navbar>
+                <div class=nav-wrapper>
+                    <div class=navbar-header>
+                        <button type=button class=navbar-toggle><span class=sr-only>Toggle navigation</span>
+                            <span class=icon-bar></span></button>
+                    </div>
+                    <div class=nav-menu>
+                        <ul class="nav navbar-nav menu-bar">
+                            <li><a href="home">Home <span></span> <span></span>
+                                <span></span> <span></span></a></li>
+                            <li><a href="overviewPlayer">Overview <span></span> <span></span> <span></span>
+                                <span></span></a></li>
+                            <li><a href="players">Details<span></span> <span></span> <span></span>
+                                <span></span></a></li>
+                            <li><a href="formPlayer" >Add player<span></span> <span></span> <span></span>
+                                <span></span></a></li>
+                            <li><a href="contact" class=active>Contact <span></span> <span></span> <span></span>
+                                <span></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+</header>
+</div>
+
+
+<div class=innerbannerwrap>
+    <div class=content></div>
+    <div class=innerbanner><img
+            th:src="@{football/innerpageBg.jpg}" class=ls-bg alt="Slide background"/><h2 class=bannerHeadline>Contact <span>me</span></h2></div>
+</div>
+
+<section class="playerDetails02" style="background-image: url('pdtls.jpg');">
+    <div class=container>
+        <div>
+
+            <ul class=product_details>
+                <li><a href=#>
+                </a></li>
+
+                <li><a href=#>
+                    <div>
+                        <div class=product-img
+                             style="background:url(Danny.jpg) center no-repeat"></div>
+                    </div>
+                    <ul class="oswald16 product_info">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-facebook" href="https://www.facebook.com/danielflorin.tintea/" style="display: flex; justify-content:center; align-items:center"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-green" href="https://wa.me/40733122893" style="display: flex; justify-content:center; align-items:center"><i class="fab fa-whatsapp"></i></a>
+                                <a class="btn btn-instagram" href="https://www.instagram.com/tintea.daniel11/" style="display: flex; justify-content:center; align-items:center"><i class="fab fa-instagram"></i></a>
+                            </div>
+
+                        <li class=cartContainer><h2 class=heading>ȚINTEA DANIEL</h2>
+                    </ul>
+                </a></li>
+                <li><a href=#>
+
+                </a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="footer">
+    <div class="footer__documentation">
+        <h3 class="text__gradient--bg">Documentation</h3>
+        <a href="https://www.w3schools.com/html/">HTML</a>
+        <a href="https://www.w3schools.com/css/">CSS</a>
+        <a href="https://www.javascript.com">Javascript</a>
+        <a href="https://spring.io/projects/spring-boot">Spring</a>
+        <a href="https://start.spring.io/">Spring Initializr</a>
+    </div>
+    <div class="footer__contact">
+        <h3 class="text__gradient--bg">Daniel</h3>
+        <a href="https://www.facebook.com/danielflorin.tintea/">Facebook</a>
+        <a href="https://www.instagram.com/tintea.daniel11/">Instagram</a>
+        <a href="https://wa.me/40733122893">Whatsapp</a>
+    </div>
+    <div class="footer__copyrights">
+        <p>Project <a href="">github</a></p>
+        <p>site design / logo © <a href="https://www.templateshub.net/template/Soccer-Club-Sports-Club-Html-Template">theme</a></p>
+        <p>Proiect @ PWeb</p>
+    </div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script th:src="@{football/vendor.js}"></script>
+<script th:src="@{football/main.js}"></script>
